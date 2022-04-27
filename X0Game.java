@@ -1,4 +1,4 @@
-// Marah Mahajne ID: 209107234
+// [ Marah Mahajne][marahmahajne68@gmail.com]
 
 import java.util.Scanner;
 
@@ -109,34 +109,33 @@ public class X0Game {
         char savedR = '*', savedL = '*';
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
-                //ROW
+
                 if (board[i][j] == 'X' || board[i][j] == 'O') {
-                    if (j + 1 < board.length) {
+
+                      //ROW
+                      if (j + 1 < board.length) {
                         if (board[i][j] == board[i][j + 1]) {
                             cRow++;
                         }
-                    }
-                }
-                //Column
-                if (board[j][i] == 'X' || board[j][i] == 'O') {
+                      }
+
+                    //Column
                     if (j + 1 < board.length) {
                         if (board[j][i] == board[j + 1][i]) {
                             cColumn++;
                         }
                     }
-                }
-                //Right Diagonal
-                if (board[i][j] == 'X' || board[i][j] == 'O') {
-                    if ( j == i) {
+
+                    //Right Diagonal
+                    if (j == i) {
                         if (savedR == '*') {
                             savedR = board[i][j];
                         } else if (savedR == board[i][j]) {
                             cDiagonal++;
                         }
                     }
-                }
-                //left Diagonal
-                if (board[i][j] == 'X' || board[i][j] == 'O') {
+
+                    //left Diagonal
                     if (i + j == board.length - 1) {
                         if (savedL == '*') {
                             savedL = board[i][j];
@@ -144,6 +143,7 @@ public class X0Game {
                             cLeftDiagonal++;
                         }
                     }
+
                 }
             }
             if (cRow == n - 1 || cColumn == n - 1) {
